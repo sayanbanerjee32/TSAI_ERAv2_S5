@@ -1,5 +1,6 @@
 from tqdm import tqdm
 import torch
+import matplotlib.pyplot as plt
 
 ## function to check if GPU is available and return relevant device
 def get_device():
@@ -83,3 +84,15 @@ def test(model, device, test_loader, criterion):
 
     # returns test accuracy and loss for the epoch
     return (100. * correct / len(test_loader.dataset)), test_loss
+
+# function to plot train and test accuracies and losses
+def plot_accuracy_losses(train_losses, train_acc, test_losses, test_acc):
+    fig, axs = plt.subplots(2,2,figsize=(15,10))
+    axs[0, 0].plot(train_losses)
+    axs[0, 0].set_title("Training Loss")
+    axs[1, 0].plot(train_acc)
+    axs[1, 0].set_title("Training Accuracy")
+    axs[0, 1].plot(test_losses)
+    axs[0, 1].set_title("Test Loss")
+    axs[1, 1].plot(test_acc)
+    axs[1, 1].set_title("Test Accuracy")
