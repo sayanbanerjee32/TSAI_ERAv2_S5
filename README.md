@@ -1,4 +1,4 @@
-# ERA v2 S5 Assignment
+# Convolution Architechtures
 ## Purpose
 This assignment refactors the S4 assignment notebook (`.ipynb`) in one main notebook file and couple of `.py` files
 ## Contents
